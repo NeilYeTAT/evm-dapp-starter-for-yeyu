@@ -6,7 +6,6 @@ import import_ from 'eslint-plugin-import';
 import prettier from 'eslint-plugin-prettier/recommended';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import storybook from 'eslint-plugin-storybook';
 import typescript from 'typescript-eslint';
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -99,8 +98,6 @@ export default [
       ...next.configs['core-web-vitals'].rules,
     },
   },
-
-  ...storybook.configs['flat/recommended'],
 
   prettier,
 
