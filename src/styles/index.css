@@ -1,0 +1,12 @@
+@import '@rainbow-me/rainbowkit/styles.css';
+@import './mantine.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+::before,
+::after {
+  @apply border-0 border-solid border-current;
+}
