@@ -1,4 +1,4 @@
-import { NextConfig } from 'next';
+import type { NextConfig } from 'next';
 
 // if (process.env.NODE_ENV === 'development') {
 // }

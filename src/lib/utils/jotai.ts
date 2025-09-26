@@ -1,7 +1,8 @@
-import { atom, createStore, SetStateAction, WritableAtom } from 'jotai';
+import type { SetStateAction, WritableAtom } from 'jotai';
+import type { SyncStorage } from 'jotai/vanilla/utils/atomWithStorage';
+import type { ZodSchema, ZodTypeDef } from 'zod';
+import { atom, createStore } from 'jotai';
 import { atomWithStorage as jotaiAtomWithStorage, RESET } from 'jotai/utils';
-import { SyncStorage } from 'jotai/vanilla/utils/atomWithStorage';
-import { ZodSchema, ZodTypeDef } from 'zod';
 import { deserialize, serialize } from './json';
 
 export const store = createStore();

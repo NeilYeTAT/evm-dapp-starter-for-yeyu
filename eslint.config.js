@@ -37,6 +37,7 @@ export default [
         'error',
         { allowString: false, allowNumber: false, allowNullableObject: false },
       ],
+      '@typescript-eslint/consistent-type-imports': 'error',
     },
   },
   {
@@ -62,7 +63,16 @@ export default [
         'error',
         {
           alphabetize: { order: 'asc' },
-          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
+          groups: [
+            'type',
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+          ],
           pathGroups: [{ pattern: '@/**', group: 'internal' }],
           pathGroupsExcludedImportTypes: [],
         },
@@ -101,5 +111,5 @@ export default [
 
   prettier,
 
-  { ignores: ['.next'] },
+  { ignores: ['.next', 'next-env.d.ts', 'postcss.config.mjs', 'src/ui/shadcn/*'] },
 ];

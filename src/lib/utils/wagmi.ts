@@ -1,7 +1,7 @@
+import type { Chain } from 'viem';
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
 import { createConfig, BaseError as WagmiBaseError } from '@wagmi/core';
 import {
-  Chain,
   createClient,
   http,
   BaseError as ViemBaseError,

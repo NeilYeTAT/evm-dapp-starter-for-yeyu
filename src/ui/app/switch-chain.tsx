@@ -1,8 +1,8 @@
 'use client';
 
+import type { ComponentProps, FC } from 'react';
 import { switchChain } from '@wagmi/core';
 import { useAtomValue } from 'jotai';
-import { ComponentProps, FC } from 'react';
 import { chains, supportedChainIds } from '@/configs/chains';
 import { chainIdAtom, connectorChainIdAtom } from '@/lib/states/evm';
 import { cn } from '@/lib/utils/shadcn';

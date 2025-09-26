@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentProps, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 import { appName } from '@/configs/app';
 import { cn } from '@/lib/utils/shadcn';
 import { Connect } from './connect';

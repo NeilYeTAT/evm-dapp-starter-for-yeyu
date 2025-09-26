@@ -1,7 +1,8 @@
 'use client';
 
+import type { FC } from 'react';
 import { useAtom } from 'jotai';
-import { FC, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { toast } from 'sonner';
 import { BaseError } from '@/lib/errors/base';
 import { lastErrorAtom } from '@/lib/states/errors';

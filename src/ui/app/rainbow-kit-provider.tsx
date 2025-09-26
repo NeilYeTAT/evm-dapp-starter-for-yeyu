@@ -1,9 +1,10 @@
 'use client';
 
+import type { FC, ReactNode } from 'react';
 import { RainbowKitProvider as Provider } from '@rainbow-me/rainbowkit';
 import { useAtomValue } from 'jotai';
 import { useTheme } from 'next-themes';
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAddress } from 'viem';
 import { chainIdAtom } from '@/lib/states/evm';
 import { rainbowkitDarkTheme, rainbowkitLightTheme } from '@/lib/utils/rainbow-kit';

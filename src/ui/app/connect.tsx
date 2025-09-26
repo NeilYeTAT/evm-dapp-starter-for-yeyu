@@ -1,9 +1,9 @@
 'use client';
 
+import type { ComponentProps, FC } from 'react';
 import { useConnectModal } from '@rainbow-me/rainbowkit';
 import { disconnect } from '@wagmi/core';
 import { useAtomValue } from 'jotai';
-import { ComponentProps, FC } from 'react';
 import { accountAtom } from '@/lib/states/evm';
 import { formatLongText } from '@/lib/utils/formatters';
 import { cn } from '@/lib/utils/shadcn';

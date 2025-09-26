@@ -1,5 +1,5 @@
+import type { Chain } from 'viem';
 import { produce } from 'immer';
-import { Chain } from 'viem';
 import { arbitrum, arbitrumSepolia, mainnet, sepolia } from 'viem/chains';
 import { Environment, environment } from './environments';
 

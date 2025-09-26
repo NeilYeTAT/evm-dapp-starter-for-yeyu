@@ -1,6 +1,7 @@
+import type { ClassValue } from 'class-variance-authority/types';
+import type { DefaultClassGroupIds } from 'tailwind-merge';
 import { cx } from 'class-variance-authority';
-import { ClassValue } from 'class-variance-authority/types';
-import { DefaultClassGroupIds, extendTailwindMerge } from 'tailwind-merge';
+import { extendTailwindMerge } from 'tailwind-merge';
 
 const tailwindMerge = extendTailwindMerge({
   extend: {

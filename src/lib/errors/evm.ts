@@ -1,4 +1,5 @@
-import { BaseError, BaseErrorOptions } from './base';
+import type { BaseErrorOptions } from './base';
+import { BaseError } from './base';
 
 export class UserRejectedRequestError extends BaseError {
   name = 'UserRejectedRequestError';

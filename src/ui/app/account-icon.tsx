@@ -1,7 +1,7 @@
 'use client';
 
-import { ComponentProps, FC } from 'react';
-import { Address } from 'viem';
+import type { ComponentProps, FC } from 'react';
+import type { Address } from 'viem';
 import { cn } from '@/lib/utils/shadcn';
 
 type Props = ComponentProps<'div'> & {

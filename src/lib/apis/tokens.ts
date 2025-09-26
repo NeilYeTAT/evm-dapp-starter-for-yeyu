@@ -1,3 +1,4 @@
+import type { Address, Hash } from 'viem';
 import {
   readContract,
   sendTransaction,
@@ -5,8 +6,8 @@ import {
   getBalance as wagmiGetBalance,
   writeContract,
 } from '@wagmi/core';
-import { Address, Hash } from 'viem';
-import { ChainId, chains } from '@/configs/chains';
+import type { ChainId } from '@/configs/chains';
+import { chains } from '@/configs/chains';
 import { erc20Abi } from '../abis/erc20';
 import { amountToRawAmount, rawAmountToAmount } from '../utils/misc';
 import { wagmiConfig } from '../utils/wagmi';
