@@ -2,6 +2,8 @@
 
 import type { ComponentProps, FC } from 'react';
 import type { Address } from 'viem';
+import { generateAvatarURL } from '@cfx-kit/wallet-avatar';
+import Image from 'next/image';
 import { cn } from '@/lib/utils/shadcn';
 
 type Props = ComponentProps<'div'> & {
@@ -14,7 +16,15 @@ export const AccountIcon: FC<Props> = ({ className, account, ...props }) => {
       className={cn('inline-flex size-5 overflow-hidden rounded-full bg-gray-100', className)}
       {...props}
     >
-      {account != null && 'none avatar'}
+      {account != null && (
+        <Image
+          className="h-full w-full"
+          width="24"
+          height="24"
+          src={generateAvatarURL(account)}
+          alt=""
+        />
+      )}
     </div>
   );
 };
