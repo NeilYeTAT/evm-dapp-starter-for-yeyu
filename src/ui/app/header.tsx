@@ -11,17 +11,19 @@ import { SwitchTheme } from './switch-theme';
 export const Header: FC<ComponentProps<'div'>> = ({ className, ...props }) => {
   return (
     <div
-      className={cn('container mx-auto flex h-20 items-center justify-between', className)}
+      className={cn('sticky mb-4 flex h-16 w-screen border-b border-dashed', className)}
       {...props}
     >
-      <Link href={'/'} className="text-2xl hover:underline">
-        {appName}
-      </Link>
+      <div className="container m-auto flex justify-between">
+        <Link href={'/'} className="text-2xl hover:underline">
+          {appName}
+        </Link>
 
-      <div className="flex space-x-4">
-        <SwitchChain />
-        <Connect />
-        <SwitchTheme />
+        <div className="flex space-x-4">
+          <SwitchChain />
+          <Connect />
+          <SwitchTheme />
+        </div>
       </div>
     </div>
   );
