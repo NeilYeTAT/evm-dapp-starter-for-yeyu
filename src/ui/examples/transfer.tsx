@@ -53,7 +53,7 @@ export const Transfer: FC<ComponentProps<'div'>> = ({ className, ...props }) => 
 
   const [amount, setAmount] = useState('');
 
-  const { mutateAsync: mutationTransfer, isPending: transfering } = useTransfer();
+  const { mutateAsync: mutationTransfer } = useTransfer();
 
   const transfer = async () => {
     if (
@@ -99,7 +99,8 @@ export const Transfer: FC<ComponentProps<'div'>> = ({ className, ...props }) => 
       <div>Amount:</div>
       <Input placeholder="0.00" value={amount} onChange={event => setAmount(event.target.value)} />
 
-      <Button className="col-span-2 place-self-start" loading={transfering} onClick={transfer}>
+      {/* TODO: loading={transfering}  */}
+      <Button className="col-span-2 place-self-start" onClick={transfer}>
         Send
       </Button>
     </div>
