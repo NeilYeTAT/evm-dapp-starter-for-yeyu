@@ -9,7 +9,7 @@ import { formatLongText } from '@/lib/utils/formatters';
 import { cn } from '@/lib/utils/shadcn';
 import { wagmiConfig } from '@/lib/utils/wagmi';
 import { Button } from '@/ui/shadcn/button';
-import { AccountIcon } from './account-icon';
+import { AccountIcon } from '../components/shared/account-icon';
 
 export const Connect: FC<ComponentProps<'div'>> = ({ className, ...props }) => {
   const account = useAtomValue(accountAtom);

@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { getAddress } from 'viem';
 import { chainIdAtom } from '@/lib/states/evm';
 import { rainbowkitDarkTheme, rainbowkitLightTheme } from '@/lib/utils/rainbow-kit';
-import { AccountIcon } from './account-icon';
+import { AccountIcon } from '../shared/account-icon';
 
 export const RainbowKitProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { resolvedTheme } = useTheme();
