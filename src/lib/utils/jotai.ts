@@ -1,6 +1,6 @@
 import type { SetStateAction, WritableAtom } from 'jotai';
 import type { SyncStorage } from 'jotai/vanilla/utils/atomWithStorage';
-import type { ZodSchema, ZodTypeDef } from 'zod';
+import type { ZodType } from 'zod';
 import { atom, createStore } from 'jotai';
 import { atomWithStorage as jotaiAtomWithStorage, RESET } from 'jotai/utils';
 import { deserialize, serialize } from './json';
@@ -14,7 +14,7 @@ type SetStateActionWithReset<Value> =
 
 export function atomWithSchema<Value, DefaultValue extends Value, ExtraArgs extends unknown[]>(
   baseAtom: WritableAtom<unknown, [SetStateActionWithReset<unknown>, ...ExtraArgs], void>,
-  schema: ZodSchema<Value, ZodTypeDef, unknown>,
+  schema: ZodType<Value, unknown>,
   defaultValue: DefaultValue,
 ): WritableAtom<Value, [SetStateActionWithReset<Value>, ...ExtraArgs], void> {
   const derivedAtom = atom(
@@ -35,7 +35,7 @@ export function atomWithSchema<Value, DefaultValue extends Value, ExtraArgs exte
 
 export function atomWithStorage<Value, DefaultValue extends Value>(
   key: string,
-  schema: ZodSchema<Value, ZodTypeDef, unknown>,
+  schema: ZodType<Value, unknown>,
   defaultValue: DefaultValue,
   storage?: SyncStorage<unknown>,
 ): WritableAtom<Value, [SetStateActionWithReset<Value>], void> {
@@ -93,7 +93,7 @@ export type SetHashParamOptions = SetHashParamsOptions & {
 
 export function atomWithHashParam<Value, DefaultValue extends Value>(
   key: string,
-  schema: ZodSchema<Value, ZodTypeDef, unknown>,
+  schema: ZodType<Value, unknown>,
   defaultValue: DefaultValue,
 ): WritableAtom<Value, [SetStateActionWithReset<Value>, options?: SetHashParamOptions], void> {
   const baseAtom = atom(

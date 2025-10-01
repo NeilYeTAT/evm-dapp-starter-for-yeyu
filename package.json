@@ -46,7 +46,7 @@
     "uni-string": "^2.0.7",
     "viem": "^2.37.8",
     "wagmi": "^2.17.5",
-    "zod": "^3.25.76"
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
