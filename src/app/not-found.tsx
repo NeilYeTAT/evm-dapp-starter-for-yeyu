@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { Button } from '@/ui/shadcn/button';
+import Link from 'next/link'
+import { Button } from '@/ui/shadcn/button'
 
 export default function NotFound() {
   return (
@@ -11,5 +11,5 @@ export default function NotFound() {
         </Link>
       </Button>
     </div>
-  );
+  )
 }

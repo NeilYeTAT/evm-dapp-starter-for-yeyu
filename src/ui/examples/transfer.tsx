@@ -1,59 +1,59 @@
-'use client';
+'use client'
 
-import type { ComponentProps, FC } from 'react';
-import { skipToken } from '@tanstack/react-query';
-import { useAtomValue } from 'jotai';
-import { useEffect, useState } from 'react';
-import { isAddress } from 'viem';
-import type { ChainId } from '@/configs/chains';
-import { chains } from '@/configs/chains';
-import { useBalance, useDecimals, useSymbol, useTransfer } from '@/lib/hooks/tokens';
-import { accountAtom, chainIdAtom } from '@/lib/states/evm';
-import { formatNumber } from '@/lib/utils/formatters';
-import { cn } from '@/lib/utils/shadcn';
-import { Button } from '@/ui/shadcn/button';
-import { Input } from '@/ui/shadcn/input';
+import type { ComponentProps, FC } from 'react'
+import { skipToken } from '@tanstack/react-query'
+import { useAtomValue } from 'jotai'
+import { useEffect, useState } from 'react'
+import { isAddress } from 'viem'
+import type { ChainId } from '@/configs/chains'
+import { chains } from '@/configs/chains'
+import { useBalance, useDecimals, useSymbol, useTransfer } from '@/lib/hooks/tokens'
+import { accountAtom, chainIdAtom } from '@/lib/states/evm'
+import { formatNumber } from '@/lib/utils/formatters'
+import { cn } from '@/lib/utils/shadcn'
+import { Button } from '@/ui/shadcn/button'
+import { Input } from '@/ui/shadcn/input'
 
 export const Transfer: FC<ComponentProps<'div'>> = ({ className, ...props }) => {
-  const chainId = useAtomValue(chainIdAtom);
+  const chainId = useAtomValue(chainIdAtom)
 
-  const account = useAtomValue(accountAtom);
+  const account = useAtomValue(accountAtom)
 
-  const [tokenChainId, setTokenChainId] = useState<ChainId | null>(null);
+  const [tokenChainId, setTokenChainId] = useState<ChainId | null>(null)
 
-  const [tokenText, setTokenText] = useState('');
+  const [tokenText, setTokenText] = useState('')
 
   const changeToken = (text: string) => {
-    setTokenChainId(chainId);
-    setTokenText(text);
-  };
+    setTokenChainId(chainId)
+    setTokenText(text)
+  }
 
   const token =
     tokenText === chains[chainId].nativeCurrency.symbol
       ? null
       : isAddress(tokenText)
         ? tokenText
-        : skipToken;
+        : skipToken
 
   const { data: balance } = useBalance(
     chainId === tokenChainId && account != null && token !== skipToken
       ? { chainId, address: token, account }
       : skipToken,
-  );
+  )
 
   const { data: symbol } = useSymbol(
     chainId === tokenChainId && token !== skipToken ? { chainId, address: token } : skipToken,
-  );
+  )
 
   const { data: decimals } = useDecimals(
     chainId === tokenChainId && token !== skipToken ? { chainId, address: token } : skipToken,
-  );
+  )
 
-  const [to, setTo] = useState('');
+  const [to, setTo] = useState('')
 
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState('')
 
-  const { mutateAsync: mutationTransfer } = useTransfer();
+  const { mutateAsync: mutationTransfer } = useTransfer()
 
   const transfer = async () => {
     if (
@@ -64,14 +64,14 @@ export const Transfer: FC<ComponentProps<'div'>> = ({ className, ...props }) => 
       isAddress(to) &&
       amount !== ''
     ) {
-      await mutationTransfer({ chainId, address: token, account, decimals, to, amount });
+      await mutationTransfer({ chainId, address: token, account, decimals, to, amount })
     }
-  };
+  }
 
   useEffect(() => {
-    setTokenChainId(chainId);
-    setTokenText('');
-  }, [chainId]);
+    setTokenChainId(chainId)
+    setTokenText('')
+  }, [chainId])
 
   return (
     <div
@@ -104,5 +104,5 @@ export const Transfer: FC<ComponentProps<'div'>> = ({ className, ...props }) => 
         Send
       </Button>
     </div>
-  );
-};
+  )
+}

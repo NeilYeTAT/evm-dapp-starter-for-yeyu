@@ -1,20 +1,20 @@
-'use client';
+'use client'
 
-import type { ComponentProps, FC } from 'react';
-import { useConnectModal } from '@rainbow-me/rainbowkit';
-import { disconnect } from '@wagmi/core';
-import { useAtomValue } from 'jotai';
-import { accountAtom } from '@/lib/states/evm';
-import { formatLongText } from '@/lib/utils/formatters';
-import { cn } from '@/lib/utils/shadcn';
-import { wagmiConfig } from '@/lib/utils/wagmi';
-import { Button } from '@/ui/shadcn/button';
-import { AccountIcon } from '../components/shared/account-icon';
+import type { ComponentProps, FC } from 'react'
+import { useConnectModal } from '@rainbow-me/rainbowkit'
+import { disconnect } from '@wagmi/core'
+import { useAtomValue } from 'jotai'
+import { accountAtom } from '@/lib/states/evm'
+import { formatLongText } from '@/lib/utils/formatters'
+import { cn } from '@/lib/utils/shadcn'
+import { wagmiConfig } from '@/lib/utils/wagmi'
+import { Button } from '@/ui/shadcn/button'
+import { AccountIcon } from '../components/shared/account-icon'
 
 export const Connect: FC<ComponentProps<'div'>> = ({ className, ...props }) => {
-  const account = useAtomValue(accountAtom);
+  const account = useAtomValue(accountAtom)
 
-  const { openConnectModal } = useConnectModal();
+  const { openConnectModal } = useConnectModal()
 
   return (
     <div className={cn('group relative inline-flex', className)} {...props}>
@@ -42,5 +42,5 @@ export const Connect: FC<ComponentProps<'div'>> = ({ className, ...props }) => {
         </Button>
       )}
     </div>
-  );
-};
+  )
+}

@@ -1,12 +1,12 @@
-import js from '@eslint/js';
-import next from '@next/eslint-plugin-next';
-import reactQuery from '@tanstack/eslint-plugin-query';
-import checkFile from 'eslint-plugin-check-file';
-import import_ from 'eslint-plugin-import';
-import prettier from 'eslint-plugin-prettier/recommended';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import typescript from 'typescript-eslint';
+import js from '@eslint/js'
+import next from '@next/eslint-plugin-next'
+import reactQuery from '@tanstack/eslint-plugin-query'
+import checkFile from 'eslint-plugin-check-file'
+import import_ from 'eslint-plugin-import'
+import prettier from 'eslint-plugin-prettier/recommended'
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+import typescript from 'typescript-eslint'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -112,4 +112,4 @@ export default [
   prettier,
 
   { ignores: ['.next', 'next-env.d.ts', 'postcss.config.mjs', 'src/ui/shadcn/*'] },
-];
+]

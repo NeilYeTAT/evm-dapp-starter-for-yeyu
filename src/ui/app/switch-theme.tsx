@@ -1,19 +1,19 @@
-'use client';
+'use client'
 
-import type { ComponentProps, FC } from 'react';
-import { Moon, Sun } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { cn } from '@/lib/utils/shadcn';
-import { Button } from '@/ui/shadcn/button';
+import type { ComponentProps, FC } from 'react'
+import { Moon, Sun } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import { cn } from '@/lib/utils/shadcn'
+import { Button } from '@/ui/shadcn/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/ui/shadcn/dropdown-menu';
+} from '@/ui/shadcn/dropdown-menu'
 
 export const SwitchTheme: FC<ComponentProps<'div'>> = ({ className, ...props }) => {
-  const { setTheme } = useTheme();
+  const { setTheme } = useTheme()
 
   return (
     <div className={cn('inline-block', className)} {...props}>
@@ -31,5 +31,5 @@ export const SwitchTheme: FC<ComponentProps<'div'>> = ({ className, ...props }) 
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  );
-};
+  )
+}

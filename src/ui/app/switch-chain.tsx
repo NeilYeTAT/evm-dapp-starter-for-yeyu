@@ -1,24 +1,24 @@
-'use client';
+'use client'
 
-import type { ComponentProps, FC } from 'react';
-import { switchChain } from '@wagmi/core';
-import { useAtomValue } from 'jotai';
-import { chains, supportedChainIds } from '@/configs/chains';
-import { chainIdAtom, connectorChainIdAtom } from '@/lib/states/evm';
-import { cn } from '@/lib/utils/shadcn';
-import { wagmiConfig } from '@/lib/utils/wagmi';
-import { Button } from '@/ui/shadcn/button';
+import type { ComponentProps, FC } from 'react'
+import { switchChain } from '@wagmi/core'
+import { useAtomValue } from 'jotai'
+import { chains, supportedChainIds } from '@/configs/chains'
+import { chainIdAtom, connectorChainIdAtom } from '@/lib/states/evm'
+import { cn } from '@/lib/utils/shadcn'
+import { wagmiConfig } from '@/lib/utils/wagmi'
+import { Button } from '@/ui/shadcn/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/ui/shadcn/dropdown-menu';
+} from '@/ui/shadcn/dropdown-menu'
 
 export const SwitchChain: FC<ComponentProps<'div'>> = ({ className, ...props }) => {
-  const chainId = useAtomValue(chainIdAtom);
+  const chainId = useAtomValue(chainIdAtom)
 
-  const connectorChainId = useAtomValue(connectorChainIdAtom);
+  const connectorChainId = useAtomValue(connectorChainIdAtom)
 
   return (
     <div className={cn('inline-block', className)} {...props}>
@@ -39,5 +39,5 @@ export const SwitchChain: FC<ComponentProps<'div'>> = ({ className, ...props }) 
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  );
-};
+  )
+}

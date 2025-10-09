@@ -1,17 +1,17 @@
-'use client';
+'use client'
 
-import type { FC, ReactNode } from 'react';
-import { QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { Provider as JotaiProvider } from 'jotai';
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import { WagmiProvider } from 'wagmi';
-import { store } from '@/lib/utils/jotai';
-import { queryClient } from '@/lib/utils/react-query';
-import { wagmiConfig } from '@/lib/utils/wagmi';
-import { Toaster } from '@/ui/shadcn/sonner';
-import { ErrorHandler } from './error-handler';
-import { RainbowKitProvider } from './rainbow-kit-provider';
+import type { FC, ReactNode } from 'react'
+import { QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { Provider as JotaiProvider } from 'jotai'
+import { ThemeProvider as NextThemesProvider } from 'next-themes'
+import { WagmiProvider } from 'wagmi'
+import { store } from '@/lib/utils/jotai'
+import { queryClient } from '@/lib/utils/react-query'
+import { wagmiConfig } from '@/lib/utils/wagmi'
+import { Toaster } from '@/ui/shadcn/sonner'
+import { ErrorHandler } from './error-handler'
+import { RainbowKitProvider } from './rainbow-kit-provider'
 
 export const Providers: FC<{ children: ReactNode }> = ({ children }) => {
   return (
@@ -29,5 +29,5 @@ export const Providers: FC<{ children: ReactNode }> = ({ children }) => {
         </WagmiProvider>
       </QueryClientProvider>
     </JotaiProvider>
-  );
-};
+  )
+}

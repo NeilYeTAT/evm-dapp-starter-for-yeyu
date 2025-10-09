@@ -1,5 +1,5 @@
-import type { Address } from 'viem';
+import type { Address } from 'viem'
 
 export type WithAccountParams = {
-  account: Address;
-};
+  account: Address
+}

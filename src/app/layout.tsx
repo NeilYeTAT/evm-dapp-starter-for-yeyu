@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
-import type { ReactNode } from 'react';
-import '@/styles/index.css';
-import { appName } from '@/configs/app';
-import { fontsClassName } from '@/lib/utils/fonts';
-import { Header } from '@/ui/app/header';
-import { Providers } from '@/ui/components/providers';
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+import '@/styles/index.css'
+import { appName } from '@/configs/app'
+import { fontsClassName } from '@/lib/utils/fonts'
+import { Header } from '@/ui/app/header'
+import { Providers } from '@/ui/components/providers'
 
 export const metadata: Metadata = {
   title: appName,
-};
+}
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -22,5 +22,5 @@ export default function Layout({ children }: { children: ReactNode }) {
         </Providers>
       </body>
     </html>
-  );
+  )
 }

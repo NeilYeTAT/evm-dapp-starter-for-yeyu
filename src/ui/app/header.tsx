@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import type { ComponentProps, FC } from 'react';
-import Link from 'next/link';
-import { appName } from '@/configs/app';
-import { cn } from '@/lib/utils/shadcn';
-import { Connect } from './connect';
-import { SwitchChain } from './switch-chain';
-import { SwitchTheme } from './switch-theme';
+import type { ComponentProps, FC } from 'react'
+import Link from 'next/link'
+import { appName } from '@/configs/app'
+import { cn } from '@/lib/utils/shadcn'
+import { Connect } from './connect'
+import { SwitchChain } from './switch-chain'
+import { SwitchTheme } from './switch-theme'
 
 export const Header: FC<ComponentProps<'div'>> = ({ className, ...props }) => {
   return (
@@ -26,5 +26,5 @@ export const Header: FC<ComponentProps<'div'>> = ({ className, ...props }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

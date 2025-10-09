@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import type { ComponentProps, FC } from 'react';
-import type { Address } from 'viem';
-import { generateAvatarURL } from '@cfx-kit/wallet-avatar';
-import Image from 'next/image';
-import { cn } from '@/lib/utils/shadcn';
+import type { ComponentProps, FC } from 'react'
+import type { Address } from 'viem'
+import { generateAvatarURL } from '@cfx-kit/wallet-avatar'
+import Image from 'next/image'
+import { cn } from '@/lib/utils/shadcn'
 
 type Props = ComponentProps<'div'> & {
-  account?: Address;
-};
+  account?: Address
+}
 
 export const AccountIcon: FC<Props> = ({ className, account, ...props }) => {
   return (
@@ -26,5 +26,5 @@ export const AccountIcon: FC<Props> = ({ className, account, ...props }) => {
         />
       )}
     </div>
-  );
-};
+  )
+}

@@ -1,27 +1,27 @@
-import type { GetAccountReturnType } from '@wagmi/core';
-import { getAccount, getChainId, watchAccount, watchChainId } from '@wagmi/core';
-import { atom } from 'jotai';
-import { supportedChainIds } from '@/configs/chains';
-import { wagmiConfig } from '../utils/wagmi';
+import type { GetAccountReturnType } from '@wagmi/core'
+import { getAccount, getChainId, watchAccount, watchChainId } from '@wagmi/core'
+import { atom } from 'jotai'
+import { supportedChainIds } from '@/configs/chains'
+import { wagmiConfig } from '../utils/wagmi'
 
-const getAccountResultAtom = atom<GetAccountReturnType | null>(null);
+const getAccountResultAtom = atom<GetAccountReturnType | null>(null)
 
 getAccountResultAtom.onMount = setAtom => {
-  const update = () => setAtom(getAccount(wagmiConfig));
-  update();
-  return watchAccount(wagmiConfig, { onChange: update });
-};
+  const update = () => setAtom(getAccount(wagmiConfig))
+  update()
+  return watchAccount(wagmiConfig, { onChange: update })
+}
 
-export const connectorChainIdAtom = atom(get => get(getAccountResultAtom)?.chainId);
+export const connectorChainIdAtom = atom(get => get(getAccountResultAtom)?.chainId)
 
-export const connectorAccountAtom = atom(get => get(getAccountResultAtom)?.address);
+export const connectorAccountAtom = atom(get => get(getAccountResultAtom)?.address)
 
-export const chainIdAtom = atom(supportedChainIds[0]);
+export const chainIdAtom = atom(supportedChainIds[0])
 
 chainIdAtom.onMount = setAtom => {
-  const update = () => setAtom(getChainId(wagmiConfig));
-  update();
-  return watchChainId(wagmiConfig, { onChange: update });
-};
+  const update = () => setAtom(getChainId(wagmiConfig))
+  update()
+  return watchChainId(wagmiConfig, { onChange: update })
+}
 
-export const accountAtom = connectorAccountAtom;
+export const accountAtom = connectorAccountAtom

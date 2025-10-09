@@ -1,48 +1,48 @@
-'use client';
+'use client'
 
-import type { FC } from 'react';
-import { useAtom } from 'jotai';
-import { useEffect, useRef } from 'react';
-import { toast } from 'sonner';
-import { BaseError } from '@/lib/errors/base';
-import { lastErrorAtom } from '@/lib/states/errors';
+import type { FC } from 'react'
+import { useAtom } from 'jotai'
+import { useEffect, useRef } from 'react'
+import { toast } from 'sonner'
+import { BaseError } from '@/lib/errors/base'
+import { lastErrorAtom } from '@/lib/states/errors'
 
 export const ErrorHandler: FC = () => {
-  const [lastError, setLastError] = useAtom(lastErrorAtom);
+  const [lastError, setLastError] = useAtom(lastErrorAtom)
 
-  const recentMessages = useRef<Partial<Record<string, boolean>>>({});
+  const recentMessages = useRef<Partial<Record<string, boolean>>>({})
 
   useEffect(() => {
     if (lastError != null) {
-      setLastError(null);
+      setLastError(null)
 
       if (lastError instanceof BaseError) {
         setTimeout(() => {
           if (!lastError.handled) {
-            lastError.handled = true;
+            lastError.handled = true
 
             if (recentMessages.current[lastError.message] !== true) {
-              recentMessages.current[lastError.message] = true;
+              recentMessages.current[lastError.message] = true
 
-              toast.error(lastError.message);
+              toast.error(lastError.message)
 
               setTimeout(() => {
-                delete recentMessages.current[lastError.message];
-              }, 1000);
+                delete recentMessages.current[lastError.message]
+              }, 1000)
             }
           }
-        });
+        })
         if (lastError.needFix) {
-          console.error(lastError);
+          console.error(lastError)
         } else {
           // eslint-disable-next-line no-console
-          console.log(lastError);
+          console.log(lastError)
         }
       } else {
-        console.error(lastError);
+        console.error(lastError)
       }
     }
-  }, [lastError, setLastError]);
+  }, [lastError, setLastError])
 
-  return null;
-};
+  return null
+}
