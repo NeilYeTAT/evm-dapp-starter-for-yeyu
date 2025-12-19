@@ -111,5 +111,5 @@ export default [
 
   prettier,
 
-  { ignores: ['.next', 'next-env.d.ts', 'postcss.config.mjs', 'src/ui/shadcn/*'] },
+  { ignores: ['.next', 'next-env.d.ts', 'postcss.config.mjs', 'public', 'src/ui/shadcn/*'] },
 ]
