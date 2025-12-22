@@ -6,8 +6,8 @@
   "editor.quickSuggestions": { "strings": true },
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "explorer.sortOrderLexicographicOptions": "upper",
-  "javascript.preferences.quoteStyle": "double",
-  "typescript.preferences.quoteStyle": "double",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
 
   // Extensions settings
   "eslint.workingDirectories": [{ "mode": "auto" }],
