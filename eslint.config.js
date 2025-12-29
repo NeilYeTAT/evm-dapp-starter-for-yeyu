@@ -111,5 +111,16 @@ export default [
 
   prettier,
 
-  { ignores: ['.next', 'next-env.d.ts', 'postcss.config.mjs', 'public', 'src/ui/shadcn/*'] },
+  {
+    ignores: [
+      '.next',
+      'next-env.d.ts',
+      'postcss.config.mjs',
+      'public',
+      'src/ui/shadcn/*',
+      'commitlint.config.cjs',
+      // * The Refer directory may contain other projects, intended for AI usage.
+      'refer',
+    ],
+  },
 ]
