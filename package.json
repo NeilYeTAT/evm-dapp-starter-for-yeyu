@@ -49,7 +49,7 @@
     "uni-string": "^2.0.7",
     "viem": "^2.44.4",
     "wagmi": "^2.19.5",
-    "zod": "^4.3.5"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.3.1",
