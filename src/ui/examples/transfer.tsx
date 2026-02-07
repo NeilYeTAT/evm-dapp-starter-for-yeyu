@@ -1,11 +1,11 @@
 'use client'
 
 import type { ComponentProps, FC } from 'react'
+import type { ChainId } from '@/configs/chains'
 import { skipToken } from '@tanstack/react-query'
 import { useAtomValue } from 'jotai'
 import { useEffect, useState } from 'react'
 import { isAddress } from 'viem'
-import type { ChainId } from '@/configs/chains'
 import { chains } from '@/configs/chains'
 import { useBalance, useDecimals, useSymbol, useTransfer } from '@/lib/hooks/tokens'
 import { accountAtom, chainIdAtom } from '@/lib/states/evm'

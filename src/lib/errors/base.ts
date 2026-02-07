@@ -19,7 +19,6 @@ export abstract class BaseError extends Error {
   }
 
   walk(fn?: (error: Error) => boolean): Error | null {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
     let current: Error | null = this
     while (current instanceof Error) {
       if ((fn != null && fn(current)) || (fn == null && !(current.cause instanceof Error))) {

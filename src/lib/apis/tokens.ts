@@ -1,3 +1,4 @@
+import type { ChainId } from '@/configs/chains'
 import {
   readContract,
   sendTransaction,
@@ -6,7 +7,6 @@ import {
   writeContract,
 } from '@wagmi/core'
 import { type Address, erc20Abi, type Hash } from 'viem'
-import type { ChainId } from '@/configs/chains'
 import { chains } from '@/configs/chains'
 import { amountToRawAmount, rawAmountToAmount } from '../utils/misc'
 import { wagmiConfig } from '../utils/wagmi'

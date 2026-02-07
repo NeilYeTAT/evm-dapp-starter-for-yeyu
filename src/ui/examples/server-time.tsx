@@ -1,7 +1,6 @@
 'use client'
 
-import type { FC } from 'react'
-import type { ComponentProps } from 'react'
+import type { ComponentProps, FC } from 'react'
 import { useServerTime } from '@/lib/hooks/time'
 import { formatTime } from '@/lib/utils/formatters'
 
